@@ -47,6 +47,36 @@ function generateRandomNumber(number) {
     return answer;
 }
 
+function generateRandomNumberWithIndex(number) {
+    // initialize array to 0
+    checkArray = [0,0,0,0,0,0,0,0,0,0];
+
+    // check the number of value is not 0 while generate random number
+    while(checkZeroElements(checkArray) < 4) {
+        checkArray[Math.floor(Math.random() * 10)]++;
+        console.log(checkArray);
+    }
+
+    for(var i = 0; i < checkArray.length; i++) {
+        if(checkArray[i] != 0) {
+            answerArray.push(i);
+        }
+    }
+    
+    console.log(answerArray);
+    return answerArray;
+}
+
+function checkZeroElements(array) {
+    var count = 0;
+    // check the number of value 0 in array
+    for(var i = 0; i < array.length; i++) {
+        (array[i] != 0) ? count++ : null;
+    }
+
+    return count;
+}
+
 function checkBall(yourAnswer, realAnswer) {
     var ball = 0;
     for(var i = 0; i < yourAnswer.length; i++) {
@@ -76,7 +106,7 @@ function checkOut(yourAnswer, realAnswer) {
 
 // running game
 function start(obj) {
-    answerArray = generateRandomNumber(4);
+    answerArray = generateRandomNumberWithIndex(4);
     obj.value = "STARTED";
     obj.disabled = true;
 }
