@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+    <title>
+
+    </title>
+    <script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+        // http://code.jquery.com
+    </script>
+    
+</head>
+<body>
+    <h1>Baseball Game</h1>
+    <input type="text" id="guess" placeholder="Enter your guess : " />
+    <input type="button" id="start" value="START" onclick="start(this);"/>
+    <input type="button" id="check" value="CHECK" onclick="running();"/>
+    <div id="statusBoard"></div>
+    <script src="game.js"></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</body>
